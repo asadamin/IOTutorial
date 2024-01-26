@@ -1,5 +1,6 @@
 package com.tutorial;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -19,7 +20,7 @@ public class ReadFile {
 			
 			String currentLine;
 			
-				while((currentLine = br.readLine())!=null){
+				while((currentLine = BoundedLineReader.readLine(br, 5_000_000))!=null){
 					System.out.println(currentLine);
 			
 		} 
